@@ -1,0 +1,17 @@
+.App-body{
+  background-color:black;
+  border: solid;
+  border-radius: 2rem;
+  text-align: center;
+  display: block;
+}
+
+.User-login{
+  color: whitesmoke;
+  margin:auto;
+}
+
+.News-list{
+  color: white;
+  margin:auto;
+}

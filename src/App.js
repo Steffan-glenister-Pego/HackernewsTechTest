@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
-import NewsList from "./components/NewsList";
+import "./styles/forms.css";
 import UserLogin from "./components/UserLogin";
 import Register from "./components/Register";
 

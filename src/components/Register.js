@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-function Register(props) {
+export default function Register(props) {
   const [email, setEmail] = useState("");
-  const [pass, usePass] = useState("");
+  const [pass, setPass] = useState("");
   const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
@@ -11,54 +11,41 @@ function Register(props) {
   };
 
   return (
-    <>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <label className="fullname" htmlFor="name">
-            Full name
-          </label>
+    <div className="auth-form-container">
+      <h2>Register</h2>
+      <form className="register-form" onSubmit={handleSubmit}>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          id="name"
+          placeholder="Full name"
+        />
+        <div>
           <input
-            className="fullname-input"
-            value={name}
-            name="name"
-            id="name"
-            placeholder="full name"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email Address"
+            id="email"
           />
-          <div className="email">
-            <label htmlFor="email">Email</label>
-            <input
-              className="email-input"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="youremail@gmail.com"
-              id="email"
-            />
-          </div>
-          <div className="password">
-            <label htmlFor="password">Password</label>
-            <input
-              className="password-input"
-              value={pass}
-              onChange={(e) => setEmail(e.target.value)}
-              type="password"
-              placeholder="******"
-              id="password"
-            />
-          </div>
-          <button onClick={props.onFormSwitch} className="LoginButton">
-            Log in
-          </button>
-        </form>
-        <button
-          onClick={() => props.onFormSwitch("login")}
-          className="RegisterButton"
-        >
-          Already have an account? Login here.
-        </button>
-      </div>
-    </>
+        </div>
+        <div>
+          <input
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+            type="password"
+            placeholder="Password"
+            id="password"
+          />
+        </div>
+        <div>
+          <button onClick={props.onFormSwitch}>Log in</button>
+        </div>
+      </form>
+      <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
+        Already have an account? Login here.
+      </button>
+      <button className="link-btn">Enter as a guest</button>
+    </div>
   );
 }
-
-export default Register;

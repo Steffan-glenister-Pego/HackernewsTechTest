@@ -10,44 +10,38 @@ export default function UserLogin(props) {
   };
 
   return (
-    <>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div className="email">
-            <label htmlFor="email">Email</label>
-            <input
-              className="email-input"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="youremail@gmail.com"
-              id="email"
-            />
-          </div>
-          <div className="password">
-            <label htmlFor="password">Password</label>
-            <input
-              className="password-input"
-              value={pass}
-              onChange={(e) => setPass(e.target.value)}
-              type="password"
-              placeholder="******"
-              id="password"
-            />
-          </div>
-          <div>
-            <button onClick={props.onFormSwitch} className="LoginButton">
-              Log in
-            </button>
-          </div>
-        </form>
-        <button
-          onClick={() => props.onFormSwitch("register")}
-          className="RegisterButton"
-        >
-          Don't already have an account? Register here.
-        </button>
-      </div>
-    </>
+    <div className="auth-form-container">
+      <h2>Login</h2>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <div>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email Address"
+            id="email"
+          />
+        </div>
+        <div>
+          <input
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+            type="password"
+            placeholder="Password"
+            id="password"
+          />
+        </div>
+        <div>
+          <button onClick={props.onFormSwitch}>Log in</button>
+        </div>
+      </form>
+      <button
+        className="link-btn"
+        onClick={() => props.onFormSwitch("register")}
+      >
+        Don't already have an account? Register here.
+      </button>
+      <button className="link-btn" onClick={() => }>Enter as a guest</button>
+    </div>
   );
 }

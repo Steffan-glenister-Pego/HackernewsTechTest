@@ -41,7 +41,7 @@ export default function UserLogin(props) {
       >
         Don't already have an account? Register here.
       </button>
-      <button className="link-btn" onClick={() => }>Enter as a guest</button>
+      <button className="link-btn">Enter as a guest</button>
     </div>
   );
 }

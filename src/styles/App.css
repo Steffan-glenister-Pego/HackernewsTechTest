@@ -38,3 +38,7 @@ button{
     cursor: pointer;
     color:#392daa;
 }
+
+.page-title{
+    text-align: center;
+}
